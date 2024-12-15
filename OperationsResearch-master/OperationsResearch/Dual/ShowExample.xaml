@@ -1,0 +1,96 @@
+﻿<Window x:Class="OperationsResearch.Dual.ShowExample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OperationsResearch.Dual"
+        mc:Ignorable="d"
+        Title="ShowExample" 
+        Height="500" Width="850" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanResizeWithGrip"
+        Background="#FFF0F4F8">
+
+    <!-- Основная сетка -->
+    <Grid Margin="10">
+
+        <!-- Кнопка "Повернутись назад" -->
+        <Button Content="Повернутись назад" 
+                HorizontalAlignment="Left" 
+                Margin="0,10,0,0" 
+                VerticalAlignment="Top" 
+                Width="130" 
+                Height="30" 
+                Click="Button_Click_Exit" 
+                Background="#FF56C596" 
+                Foreground="White"
+                FontWeight="Bold"
+                BorderThickness="0"
+                ToolTip="Вернуться на предыдущую страницу"/>
+
+        <!-- Сетка для размещения элементов внутри окна -->
+        <Grid Margin="0,40,0,0">
+
+            <!-- Определение строк -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Контейнер для основной таблицы -->
+            <Border Grid.Row="0" 
+                    CornerRadius="8" 
+                    Background="White" 
+                    Margin="5" 
+                    Padding="10" 
+                    BorderBrush="#FFD1E8E2" 
+                    BorderThickness="1">
+                <!-- Применение DropShadowEffect -->
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="2" Opacity="0.5"/>
+                </Border.Effect>
+
+                <!-- Убираем ShowGridLines -->
+                <Grid x:Name="textBoxContainer" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Top"
+                       ShowGridLines="True"/>
+            </Border>
+
+            <!-- Контейнер для Z-функции -->
+            <Border Grid.Row="1" 
+                    CornerRadius="8" 
+                    Background="White" 
+                    Margin="5" 
+                    Padding="10" 
+                    BorderBrush="#FFD1E8E2" 
+                    BorderThickness="1">
+                <!-- Применение DropShadowEffect -->
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="10" ShadowDepth="2" Opacity="0.5"/>
+                </Border.Effect>
+
+                <!-- Убираем ShowGridLines -->
+                <Grid x:Name="textBoxContainerZ" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Top"
+                       ShowGridLines="True"/>
+            </Border>
+
+            <!-- Кнопка "Далі" -->
+            <Button Grid.Row="2" 
+                    Content="Далі" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Width="180" 
+                    Height="40" 
+                    Click="Button_Click_Next" 
+                    Background="#FF56C596" 
+                    Foreground="White" 
+                    FontWeight="Bold" 
+                    BorderThickness="0" 
+                    ToolTip="Перейти к следующему шагу"/>
+        </Grid>
+    </Grid>
+</Window>
